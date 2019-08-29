@@ -1,0 +1,16 @@
+{% include 'partials/header.html' %}
+<div class="back-link-wrapper">
+  <a href="/">Back</a>
+</div>
+<form action="{% url 'update' todo.id %}" method="post">
+{% csrf_token %}
+  <label for="update-title">Title</label><br>
+  <input type="text" value="{{ todo.title }}" class="input" name="update-title" id="update-title" />
+  <br>
+  <br>
+  <label for="update-text">Text</label><br>
+  <textarea type="text" class="input" rows="6" cols="30" name="update-text" id="update-text">{{ todo.text }}</textarea>
+  <br>
+  <input type="submit" value="Update" class="btn" />
+</form>
+{% include 'partials/footer.html' %}

@@ -1,0 +1,15 @@
+{% include 'partials/header.html' %}
+<div class="back-link-wrapper">
+  <a href="/todos">Back</a>
+</div>
+<div class="details-wrapper">
+  <h2>{{ todo.title }}</h2>
+  <p>{{ todo.text }}</p>
+  <br>
+  Created on {{ todo.created_at }}
+  <div class="btn-wrapper">
+    <a href="/todos/update/{{ todo.id }}" class="btn">Edit</a>
+    <a href="/delete/{{ todo.id }}" class="btn">Delete</a>
+  </div>
+</div>
+{% include 'partials/footer.html' %}
